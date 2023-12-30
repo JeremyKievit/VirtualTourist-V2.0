@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Annotation" representedClassName="Annotation" syncable="YES" codeGenerationType="class">
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="long" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pages" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="flickrImages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FlickrImage" inverseName="annotation" inverseEntity="FlickrImage"/>
+    </entity>
+    <entity name="FlickrImage" representedClassName="FlickrImage" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="annotation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Annotation" inverseName="flickrImages" inverseEntity="Annotation"/>
+    </entity>
+    <elements>
+        <element name="Annotation" positionX="627.46875" positionY="2145.30078125" width="128" height="89"/>
+        <element name="FlickrImage" positionX="848.59375" positionY="2151.609375" width="128" height="73"/>
+    </elements>
+</model>
